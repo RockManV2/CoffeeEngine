@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-namespace CoffeeEngine;
+using CoffeeEngine;
+using CoffeeEngine.SceneManagement;
 
 public class Game1 : Game
 {
@@ -12,13 +12,16 @@ public class Game1 : Game
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = 1920;
+        _graphics.PreferredBackBufferHeight = 1080;
+        
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
+        Time.Start();
 
         base.Initialize();
     }
@@ -26,17 +29,27 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        
+        #region Utilities
+        Utils.DeviceManager = _graphics;
+        Utils.SpriteBatch = _spriteBatch;
+        Utils.ContentManager = Content;
+        Utils.Game = this;
+        #endregion
 
-        // TODO: use this.Content to load your game content here
+        SceneManager.LoadSceneContent("Menu");
+        
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
-            Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
+        SceneManager.ActiveScene.UpdateScene();
+        SceneManager.ActiveScene.CheckCollisions();
 
-        // TODO: Add your update logic here
+        Time.UpdateTime();
+        
+        // Move this to scene update
+        SceneManager.ActiveScene.LateDestroyEvent?.Invoke();
 
         base.Update(gameTime);
     }
@@ -45,8 +58,12 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        _spriteBatch.Begin();
 
+        // Draw the active scene
+        SceneManager.ActiveScene.DrawScene(_spriteBatch);
+
+        _spriteBatch.End();
         base.Draw(gameTime);
     }
 }

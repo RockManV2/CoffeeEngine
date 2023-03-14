@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iBDhbBRJBwe/imN23lnOsNjNdf5oTe3Tawo6Z6hWO1qHOHIACINwiNYanSrfKBY+Y6P4iDuJa5swY/QAAxscPg==",
+  "dgSpecHash": "/h+y0bPCYPaIKm2nEh2J+5waBCTBmPqQSL/7ZwWSlKS7F5i3nUM0wnLU50s2r+6q9J/ttp1nQezFaoKgX37Hpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\TestEnviroment\\TestEnviroment.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.win32.registry\\4.0.0\\microsoft.win32.registry.4.0.0.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\sjoos\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\monogame.framework.windowsdx\\3.8.1.303\\monogame.framework.windowsdx.3.8.1.303.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
