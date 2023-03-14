@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kKEYlRKABX7SB5dQ3njgaaROk0rfN5dGX35J+KZ9+E81X1blspv9guICLfbsw3f8Y5Cu91c5rZpY5azC7nIANQ==",
+  "dgSpecHash": "8Hk11i9J5XTVAMGseJm17yiPMlMTNX0TXUKj4wJyinAfNlDHYTligspgLGIeGQYB+mj22xZmlbseV40J/cbIrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sjoos\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
   "logs": []
 }
