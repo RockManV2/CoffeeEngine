@@ -1,7 +1,7 @@
-﻿
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using CoffeeEngine.SceneManagement;
 using CoffeeEngine.Physics;
+
 namespace CoffeeEngine;
 
 public class GameObject
@@ -15,26 +15,40 @@ public class GameObject
     private readonly List<IDrawable> _drawableComponents = new();
 
     #endregion
-    
+
     #region Object Properties
 
     public string Name { get; set; } = "New GameObject";
-    public bool Active { get; set; } = true;
+
+    private bool _active = true;
+
+    public bool Active
+    {
+        get => _active;
+        set
+        {
+            if (_active && !value)
+                _components.ForEach(component => component.OnDisable());
+            else if (!_active && value)
+                _components.ForEach(component => component.OnEnable());
+
+            _active = value;
+        }
+    }
+
     public string Tag { get; set; } = "";
 
     #endregion
-    
+
     #region Constructors
 
     public GameObject()
     {
-        
     }
 
-    
     #endregion
 
-    
+
     #region Static Methods
 
     public static GameObject Find(string name)
@@ -44,24 +58,24 @@ public class GameObject
                 return gameObject;
         return null;
     }
-    
+
     public static GameObject Instantiate()
     {
         GameObject newObject = new();
         newObject.transform = new();
-        
+
         SceneManager.ActiveScene.Add(newObject);
-        
+
         return newObject;
     }
-    
+
     public static List<GameObject> FindObjectsWithTag(string pTag)
     {
         List<GameObject> foundObjects = new();
         foreach (GameObject gameObject in SceneManager.ActiveScene.GameObjects)
             if (gameObject.Tag == pTag)
                 foundObjects.Add(gameObject);
-        
+
         if (foundObjects.Count > 0)
             return foundObjects;
         else
@@ -105,16 +119,39 @@ public class GameObject
     #endregion
 
     #region Lifetime methods
-    
-    public void Awake() => _components.ForEach(component => component.Awake());
 
-    public void Start() => _components.ForEach(component => component.Start());
+    public void Awake()
+    {
+        if (!_active) return;
+        _components.ForEach(component => component.Awake());
+    }
 
-    public void Update() => _updateableComponents.ForEach(updateableComponent => updateableComponent.Update());
+    public void Start()
+    {
+        if (!_active) return;
+        _components.ForEach(component => component.Start());
+    }
 
-    public void Draw(SpriteBatch spriteBatch) => _drawableComponents.ForEach(drawableComponent => drawableComponent.Draw(spriteBatch));
+    public void Update()
+    {
+        if (!_active) return;
+        _updateableComponents.ForEach(updateableComponent => updateableComponent.Update());
+    }
 
-    public void SignalCollision(CollisionInfo collisionInfo) => _components.ForEach(component => component.OnCollisionStay(collisionInfo));
+    public void Draw(SpriteBatch spriteBatch)
+    {
+        if(!_active) return;
+        _drawableComponents.ForEach(drawableComponent => drawableComponent.Draw(spriteBatch));
+    }
+
+    public void SignalCollision(CollisionInfo collisionInfo)
+    {
+        foreach (var component in _components)
+        {
+            if (component is MonoBehaviour monoBehaviour)
+                monoBehaviour.OnCollisionStay(collisionInfo);
+        }
+    }
 
     #endregion
 }

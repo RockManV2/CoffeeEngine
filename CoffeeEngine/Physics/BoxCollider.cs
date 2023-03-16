@@ -16,12 +16,19 @@ public class BoxCollider : Component, IUpdateable
 
     public void Update()
     {
+        if(!Enabled) return;
         _hitBox.X = (int)GameObject.transform.Position.X;
         _hitBox.Y = (int)GameObject.transform.Position.Y;
     }
 
     public bool CheckCollision(BoxCollider other, out CollisionInfo collisionInfo)
     {
+        if (!Enabled)
+        {
+            collisionInfo.Other = null;
+            return false;
+        }
+        
         bool collisionResult = _hitBox.Intersects(other._hitBox);
         collisionInfo.Other = collisionResult ? this : null;
         

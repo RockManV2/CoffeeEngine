@@ -1,13 +1,13 @@
-﻿
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+
 namespace CoffeeEngine;
 
 public interface IUpdateable
-    {
-        public void Update();
-    }
+{
+    public void Update();
+}
 
-    public interface IDrawable
-    {
-        public void Draw(SpriteBatch spriteBatch);
-    }
+public interface IDrawable
+{
+    public void Draw(SpriteBatch spriteBatch);
+}
