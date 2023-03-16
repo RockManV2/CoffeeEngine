@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
+﻿
+using System.ComponentModel;
 using System.Reflection;
 using System.Xml;
-
 namespace CoffeeEngine.SceneManagement;
 
 public static class SceneManager
@@ -39,7 +39,6 @@ public static class SceneManager
 
         ActiveScene.Awake();
         ActiveScene.Start();
-        ActiveScene.UpdateScene();
     }
 
     #endregion

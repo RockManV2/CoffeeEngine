@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
-
+﻿
+using Microsoft.Xna.Framework.Input;
 namespace CoffeeEngine.UI;
 
 public class ButtonHoverState : ButtonStateBase

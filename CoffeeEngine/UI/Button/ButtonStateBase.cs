@@ -1,4 +1,5 @@
-﻿namespace CoffeeEngine.UI;
+﻿
+namespace CoffeeEngine.UI;
 
     public abstract class ButtonStateBase
     {

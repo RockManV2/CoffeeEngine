@@ -1,4 +1,5 @@
-﻿using CoffeeEngine.Physics;
+﻿
+using CoffeeEngine.Physics;
 namespace CoffeeEngine;
 
 public abstract class Component

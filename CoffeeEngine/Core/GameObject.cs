@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿
+using Microsoft.Xna.Framework.Graphics;
 using CoffeeEngine.SceneManagement;
 using CoffeeEngine.Physics;
-
 namespace CoffeeEngine;
 
 public class GameObject
@@ -74,18 +74,18 @@ public class GameObject
 
     public T AddComponent<T>() where T : Component, new()
     {
-        T newCompenent = new() { GameObject = this };
-        _components.Add(newCompenent);
-        if (newCompenent is IUpdateable updateableComponent)
+        T newComponent = new() { GameObject = this };
+        _components.Add(newComponent);
+        if (newComponent is IUpdateable updateableComponent)
             _updateableComponents.Add(updateableComponent);
 
-        if (newCompenent is IDrawable drawableComponent)
+        if (newComponent is IDrawable drawableComponent)
             _drawableComponents.Add(drawableComponent);
 
-        if (newCompenent is BoxCollider boxCollider)
+        if (newComponent is BoxCollider boxCollider)
             SceneManager.ActiveScene.Collidables.Add(boxCollider);
 
-        return newCompenent;
+        return newComponent;
     }
 
     public T GetComponent<T>() where T : Component

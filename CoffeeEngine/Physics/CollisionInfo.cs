@@ -1,4 +1,5 @@
-﻿namespace CoffeeEngine.Physics;
+﻿
+namespace CoffeeEngine.Physics;
 
 public struct CollisionInfo
 {

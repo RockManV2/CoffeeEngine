@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-
+﻿
+using Microsoft.Xna.Framework;
 namespace CoffeeEngine;
 
 public static class Time

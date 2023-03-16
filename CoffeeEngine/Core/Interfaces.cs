@@ -1,7 +1,8 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-namespace CoffeeEngine
-{
-    public interface IUpdateable
+﻿
+using Microsoft.Xna.Framework.Graphics;
+namespace CoffeeEngine;
+
+public interface IUpdateable
     {
         public void Update();
     }
@@ -10,4 +11,3 @@ namespace CoffeeEngine
     {
         public void Draw(SpriteBatch spriteBatch);
     }
-}

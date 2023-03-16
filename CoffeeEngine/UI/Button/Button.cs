@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using static CoffeeEngine.UI.ButtonStateBase;
-
 namespace CoffeeEngine.UI;
 
 public class Button : Component, IUpdateable

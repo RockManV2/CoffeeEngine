@@ -47,9 +47,6 @@ public class Game1 : Game
         SceneManager.ActiveScene.CheckCollisions();
 
         Time.UpdateTime();
-        
-        // Move this to scene update
-        SceneManager.ActiveScene.LateDestroyEvent?.Invoke();
 
         base.Update(gameTime);
     }
