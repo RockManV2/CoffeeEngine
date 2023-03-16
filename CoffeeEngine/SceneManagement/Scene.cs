@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using CoffeeEngine.Physics;
 
+using CoffeeEngine.Physics;
 namespace CoffeeEngine.SceneManagement;
 
 public class Scene
@@ -12,9 +12,7 @@ public class Scene
     public readonly List<GameObject> GameObjects = new();
     public readonly List<BoxCollider> Collidables = new();
 
-    public delegate void SceneEvent();
-
-    public SceneEvent LateDestroyEvent;
+    private readonly List<GameObject> _destroyObjects = new();
 
     #endregion
 
@@ -33,7 +31,7 @@ public class Scene
 
     public void Add(GameObject pObject) => GameObjects.Add(pObject);
 
-    public void Destroy(GameObject destroyObject) => LateDestroyEvent += () => DestroyImmediate(destroyObject);
+    public void Destroy(GameObject destroyObject) => _destroyObjects.Add(destroyObject);
 
     public void DestroyImmediate(GameObject destroyObject)
     {
@@ -52,9 +50,12 @@ public class Scene
     public void UpdateScene()
     {
         GameObjects.ForEach(gameObject => gameObject.Update());
-        
-        foreach (var del in SceneManager.ActiveScene.LateDestroyEvent?.GetInvocationList())
-                SceneManager.ActiveScene.LateDestroyEvent -= (SceneEvent)del;
+
+        foreach (GameObject obj in _destroyObjects)
+        {
+            GameObjects.Remove(obj);
+            Collidables.Remove(obj.GetComponent<BoxCollider>());
+        }
     }
 
     public void DrawScene(SpriteBatch pSpriteBatch) => GameObjects.ForEach(gameObject => gameObject.Draw(pSpriteBatch));

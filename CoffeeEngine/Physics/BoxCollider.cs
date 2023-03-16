@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿
+using Microsoft.Xna.Framework;
 namespace CoffeeEngine.Physics;
 
 public class BoxCollider : Component, IUpdateable

@@ -1,4 +1,5 @@
-﻿namespace CoffeeEngine.UI;
+﻿
+namespace CoffeeEngine.UI;
 
 public class ButtonReleasedState : ButtonStateBase
 {
