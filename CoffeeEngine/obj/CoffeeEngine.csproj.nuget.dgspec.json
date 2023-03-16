@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj": {}
+    "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj": {
+    "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj",
+        "projectUniqueName": "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj",
         "projectName": "CoffeeEngine",
-        "projectPath": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj",
+        "projectPath": "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\CoffeeEngine\\CoffeeEngine.csproj",
         "packagesPath": "C:\\Users\\sjoos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\CoffeeEngine\\obj\\",
+        "outputPath": "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\CoffeeEngine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

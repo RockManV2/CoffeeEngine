@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/h+y0bPCYPaIKm2nEh2J+5waBCTBmPqQSL/7ZwWSlKS7F5i3nUM0wnLU50s2r+6q9J/ttp1nQezFaoKgX37Hpg==",
+  "dgSpecHash": "5nOVvyxD+05pYI9wqc7qQbZ0FhVruxL9dX0kiuAi1b55ykdGrBFPw2JkdUDXyYXr0D2M/uZMl3jLYeJAN44TYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sjoos\\Documents\\Git Repositories\\CoffeeEngine\\TestEnviroment\\TestEnviroment.csproj",
+  "projectFilePath": "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\TestEnviroment\\TestEnviroment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sjoos\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
