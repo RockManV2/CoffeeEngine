@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Reflection;
 using System.Xml;
 
@@ -24,11 +25,18 @@ public static class SceneManager
             LoadSceneContent(Scenes[ActiveScene.Id + 1]);
     }
 
+    public static void LoadPreviousScene()
+    {
+        if (Scenes.ContainsKey(ActiveScene.Id - 1))
+            LoadSceneContent(Scenes[ActiveScene.Id - 1]);
+    }
+
     public static void LoadSceneContent(string sceneName)
     {
         XmlDocument doc = GetSceneXml(sceneName);
 
-        ActiveScene = new Scene(Scenes.Count, sceneName);
+        int x = Scenes.FirstOrDefault(x => x.Value == sceneName).Key;
+        ActiveScene = new Scene(x, sceneName);
 
 
         foreach (XmlNode xmlNode in doc.ChildNodes)
@@ -46,6 +54,16 @@ public static class SceneManager
     #endregion
 
     #region Private Methods
+
+    public static void LoadAllScenes()
+    {
+        var x = Path.Combine(Utils.ContentManager.RootDirectory, "Scenes");
+        foreach (var file in Directory.GetFiles(x))
+        {
+            var y = Path.GetFileName(file).TrimEnd('l').TrimEnd('m').TrimEnd('x').TrimEnd('.');
+            Scenes.Add(Scenes.Count, y);
+        }
+    }
 
     private static XmlDocument GetSceneXml(string sceneName)
     {
@@ -83,7 +101,8 @@ public static class SceneManager
                     // So hardcoded ;.;
                     if (xmlValue.Name == "FilePath")
                     {
-                        ((SpriteRenderer)newComponent).LoadContent(gameObject.ChildNodes[0].ChildNodes[0].Attributes[0].Value);
+                        ((SpriteRenderer)newComponent).LoadContent(gameObject.ChildNodes[0].ChildNodes[0].Attributes[0]
+                            .Value);
                         continue;
                     }
 
@@ -98,7 +117,7 @@ public static class SceneManager
                     else if (componentType.GetProperty(xmlValue.Name) != null)
                         instanceType = componentType.GetProperty(xmlValue.Name).PropertyType;
 
-                    
+
                     dynamic typeInstance = Activator.CreateInstance(instanceType);
 
                     TypedReference reference = new();
@@ -152,7 +171,10 @@ public static class SceneManager
                         }
                     }
                 }
+
+                newComponent.transform = newObject.GetComponent<Transform>();
             }
+
             ActiveScene.Add(newObject);
         }
     }
@@ -162,7 +184,6 @@ public static class SceneManager
         foreach (GameObject go in ActiveScene.GameObjects)
         {
             go.transform = go.GetComponent<Transform>();
-            
         }
     }
 

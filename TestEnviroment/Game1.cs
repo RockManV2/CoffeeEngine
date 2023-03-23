@@ -22,7 +22,7 @@ public class Game1 : Game
     protected override void Initialize()
     {
         Time.Start();
-
+        
         base.Initialize();
     }
 
@@ -36,7 +36,7 @@ public class Game1 : Game
         Utils.ContentManager = Content;
         Utils.Game = this;
         #endregion
-
+        SceneManager.LoadAllScenes();
         SceneManager.LoadSceneContent("Scene1");
         
     }

@@ -12,7 +12,7 @@
     </Transform>
     <Button/>
   </NextButton>
-  
+
   <PreviousButton>
     <SpriteRenderer>
       <FilePath FilePath= "UI/Arrow"/>
@@ -26,17 +26,6 @@
     <Button/>
   </PreviousButton>
 
-  <Maxwell1>
-    <SpriteRenderer>
-      <FilePath FilePath= "Sprites/Maxwell"/>
-    </SpriteRenderer>
-    <Transform>
-      <Position X="800" Y ="540"/>
-      <Scale X="0.7" Y ="0.7"/>
-      <Origin X="0.5" Y ="0.5"/>
-    </Transform>
-  </Maxwell1>
-  
   <Manager>
     <GameSceneSwitcher/>
   </Manager>

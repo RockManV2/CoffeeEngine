@@ -16,6 +16,12 @@
 #begin Scenes/Scene1.xml
 /copy:Scenes/Scene1.xml
 
+#begin Scenes/Scene2.xml
+/copy:Scenes/Scene2.xml
+
+#begin Scenes/Scene3.xml
+/copy:Scenes/Scene3.xml
+
 #begin Sprites/Maxwell.png
 /importer:TextureImporter
 /processor:TextureProcessor
