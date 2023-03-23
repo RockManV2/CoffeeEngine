@@ -5,7 +5,7 @@
         <PublishReadyToRun>false</PublishReadyToRun>
         <TieredCompilation>false</TieredCompilation>
         <UseWindowsForms>true</UseWindowsForms>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <AssemblyName>TestEnviroment</AssemblyName>
         <RootNamespace>TestEnviroment</RootNamespace>
     </PropertyGroup>

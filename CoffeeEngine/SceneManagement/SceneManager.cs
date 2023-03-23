@@ -1,25 +1,26 @@
-﻿
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Reflection;
 using System.Xml;
+
 namespace CoffeeEngine.SceneManagement;
 
 public static class SceneManager
 {
     #region Object fields
-    
+
     public static Scene ActiveScene;
+
     // Change to read te content of the scene folder
     private static readonly Dictionary<int, string> Scenes = new() { };
 
     #endregion
-    
+
 
     #region Public Methods
 
     public static void LoadNextScene()
     {
-        if(Scenes.ContainsKey(ActiveScene.Id + 1))
+        if (Scenes.ContainsKey(ActiveScene.Id + 1))
             LoadSceneContent(Scenes[ActiveScene.Id + 1]);
     }
 
@@ -35,6 +36,7 @@ public static class SceneManager
             if (xmlNode.Name == "GameObjects")
                 CreateContent(xmlNode);
         }
+
         AfterSceneCreation();
 
         ActiveScene.Awake();
@@ -47,7 +49,7 @@ public static class SceneManager
 
     private static XmlDocument GetSceneXml(string sceneName)
     {
-        string scenePath = Path.Combine(Utils.ContentManager.RootDirectory, "Scenes" ,sceneName + ".xml");
+        string scenePath = Path.Combine(Utils.ContentManager.RootDirectory, "Scenes", sceneName + ".xml");
 
         XmlDocument document = new XmlDocument();
         document.Load(scenePath);
@@ -71,17 +73,32 @@ public static class SceneManager
                 MethodInfo genericInfo = info.MakeGenericMethod(componentType);
                 Component newComponent = (Component)genericInfo.Invoke(newObject, null);
 
+                // So hardcoded ;.;
+                if (component.Name == "Transform")
+                    newObject.GetComponent<SpriteRenderer>().transform = (Transform)newComponent;
+
+
                 foreach (XmlNode xmlValue in component.ChildNodes)
                 {
+                    // So hardcoded ;.;
+                    if (xmlValue.Name == "FilePath")
+                    {
+                        ((SpriteRenderer)newComponent).LoadContent(gameObject.ChildNodes[0].ChildNodes[0].Attributes[0].Value);
+                        continue;
+                    }
+
                     FieldInfo field = componentType.GetField(xmlValue.Name);
                     PropertyInfo property = componentType.GetProperty(xmlValue.Name);
                     if (field is null && property is null)
                         continue;
 
-                    Type fieldType = field is null ? property.PropertyType : field.FieldType;
+                    Type instanceType = null;
+                    if (componentType.GetField(xmlValue.Name) != null)
+                        instanceType = componentType.GetField(xmlValue.Name).FieldType;
+                    else if (componentType.GetProperty(xmlValue.Name) != null)
+                        instanceType = componentType.GetProperty(xmlValue.Name).PropertyType;
 
-                    Type instanceType = componentType.GetField(xmlValue.Name).FieldType;
-
+                    
                     dynamic typeInstance = Activator.CreateInstance(instanceType);
 
                     TypedReference reference = new();
@@ -100,7 +117,7 @@ public static class SceneManager
                                 d);
                         }
                         else if (componentType.GetField(attribute.Name) != null)
-                        { 
+                        {
                             dynamic d = Convert(componentType.GetField(attribute.Name).FieldType, attribute.Value);
                             componentType.GetField(attribute.Name).SetValue(newComponent,
                                 d);
@@ -116,17 +133,26 @@ public static class SceneManager
                                 instanceField.SetValue(typeInstance, value);
                             else
                                 instanceField.SetValueDirect(reference, value);
-                            
+
                             newComponent.GetType().GetField(xmlValue.Name).SetValue(newComponent, typeInstance);
+                        }
+                        else if (componentType.GetProperty(xmlValue.Name) != null)
+                        {
+                            FieldInfo instanceField = instanceType.GetField(attribute.Name);
+
+                            object value = Convert(instanceField.FieldType,
+                                attribute.Value);
+
+                            if (instanceType.IsClass)
+                                instanceField.SetValue(typeInstance, value);
+                            else
+                                instanceField.SetValueDirect(reference, value);
+
+                            newComponent.GetType().GetProperty(xmlValue.Name).SetValue(newComponent, typeInstance);
                         }
                     }
                 }
-
-                newComponent.transform = newObject.GetComponent<Transform>();
             }
-
-            newObject.GetComponent<SpriteRenderer>()
-                .LoadContent(gameObject.ChildNodes[1].ChildNodes[0].Attributes[0].Value);
             ActiveScene.Add(newObject);
         }
     }
@@ -136,6 +162,7 @@ public static class SceneManager
         foreach (GameObject go in ActiveScene.GameObjects)
         {
             go.transform = go.GetComponent<Transform>();
+            
         }
     }
 

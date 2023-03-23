@@ -3,7 +3,7 @@ namespace CoffeeEngine;
 
 public abstract class Component
 {
-    private bool _enabled;
+    private bool _enabled = true;
     public bool Enabled
     {
         get => _enabled;

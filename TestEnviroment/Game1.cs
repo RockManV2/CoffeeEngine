@@ -37,7 +37,7 @@ public class Game1 : Game
         Utils.Game = this;
         #endregion
 
-        SceneManager.LoadSceneContent("Menu");
+        SceneManager.LoadSceneContent("Scene1");
         
     }
 

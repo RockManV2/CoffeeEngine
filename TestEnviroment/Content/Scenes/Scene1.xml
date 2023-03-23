@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObjects>
+  <NextButton>
+    <SpriteRenderer>
+      <FilePath FilePath= "UI/Arrow"/>
+    </SpriteRenderer>
+    <Transform>
+      <Position X="900" Y ="300"/>
+      <Scale X="0.2" Y ="0.2"/>
+      <Rotation Rotation= "0"/>
+      <Origin X="0.5" Y ="0.5"/>
+    </Transform>
+  </NextButton>
+  
+  <PreviousButton>
+    <SpriteRenderer>
+      <FilePath FilePath= "UI/Arrow"/>
+    </SpriteRenderer>
+    <Transform>
+      <Position X="900" Y ="300"/>
+      <Scale X="0.2" Y ="0.2"/>
+      <Origin X="0.5" Y ="0.5"/>
+      <Rotation Rotation= "180"/>
+    </Transform>
+  </PreviousButton>
+</GameObjects>
