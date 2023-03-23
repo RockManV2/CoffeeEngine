@@ -93,7 +93,12 @@ public static class SceneManager
 
                 // So hardcoded ;.;
                 if (component.Name == "Transform")
-                    newObject.GetComponent<SpriteRenderer>().transform = (Transform)newComponent;
+                {
+                    if(newObject.GetComponent<SpriteRenderer>() != null)
+                        newObject.GetComponent<SpriteRenderer>().transform = (Transform)newComponent;
+                    if(newObject.GetComponent<AnimatedSpriteRenderer>() != null)
+                        newObject.GetComponent<AnimatedSpriteRenderer>().transform = (Transform)newComponent;
+                }
 
 
                 foreach (XmlNode xmlValue in component.ChildNodes)
@@ -102,6 +107,12 @@ public static class SceneManager
                     if (xmlValue.Name == "FilePath")
                     {
                         ((SpriteRenderer)newComponent).LoadContent(gameObject.ChildNodes[0].ChildNodes[0].Attributes[0]
+                            .Value);
+                        continue;
+                    }
+                    if (xmlValue.Name == "FilePath2")
+                    {
+                        ((AnimatedSpriteRenderer)newComponent).LoadContent(gameObject.ChildNodes[0].ChildNodes[0].Attributes[0]
                             .Value);
                         continue;
                     }

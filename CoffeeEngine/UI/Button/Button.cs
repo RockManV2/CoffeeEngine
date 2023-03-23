@@ -41,8 +41,8 @@ public class Button : Component, IUpdateable
         MouseState = Mouse.GetState();
         MousePosition = new Vector2(MouseState.X, MouseState.Y);
         
-        Hitbox.X = (int)GameObject.transform.Position.X;
-        Hitbox.Y = (int)GameObject.transform.Position.Y;
+        Hitbox.X = (int)transform.Position.X;
+        Hitbox.Y = (int)transform.Position.Y;
         _currentButtonState.Update();
     }
 

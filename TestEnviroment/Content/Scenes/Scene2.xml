@@ -5,26 +5,68 @@
       <FilePath FilePath= "UI/Arrow"/>
     </SpriteRenderer>
     <Transform>
-      <Position X="1770" Y ="540"/>
-      <Scale X="0.2" Y ="0.2"/>
-      <Rotation Rotation= "0"/>
-      <Origin X="0.5" Y ="0.5"/>
+      <Position X="1700" Y ="480"/>
     </Transform>
     <Button/>
   </NextButton>
 
   <PreviousButton>
     <SpriteRenderer>
-      <FilePath FilePath= "UI/Arrow"/>
+      <FilePath FilePath= "UI/ArrowR"/>
     </SpriteRenderer>
     <Transform>
-      <Position X="150" Y ="540"/>
-      <Scale X="0.2" Y ="0.2"/>
-      <Origin X="0.5" Y ="0.5"/>
-      <Rotation Rotation= "180"/>
+      <Position X="0" Y ="480"/>
     </Transform>
     <Button/>
   </PreviousButton>
+
+  <Maxwell1>
+    <SpriteRenderer>
+      <FilePath FilePath= "Sprites/Maxwell"/>
+    </SpriteRenderer>
+    <Transform>
+      <Position X="500" Y ="540"/>
+      <Scale X="0.7" Y ="0.7"/>
+      <Origin X="0.5" Y ="0.5"/>
+    </Transform>
+    
+    <ScalerBehaviour>
+      <Amplitude Amplitude="1"/>
+      <Frequency Frequency="1"/>
+    </ScalerBehaviour>
+  </Maxwell1>
+
+  <Maxwell2>
+    <SpriteRenderer>
+      <FilePath FilePath= "Sprites/Maxwell"/>
+    </SpriteRenderer>
+    <Transform>
+      <Position X="900" Y ="540"/>
+      <Scale X="0.7" Y ="0.7"/>
+      <Origin X="0.5" Y ="0.5"/>
+    </Transform>
+    
+    <ScalerBehaviour>
+      <Amplitude Amplitude="1.5"/>
+      <Frequency Frequency="1.5"/>
+    </ScalerBehaviour>
+  </Maxwell2>
+
+  <Maxwell3>
+    <SpriteRenderer>
+      <FilePath FilePath= "Sprites/Maxwell"/>
+    </SpriteRenderer>
+    <Transform>
+      <Position X="1300" Y ="540"/>
+      <Scale X="0.7" Y ="0.7"/>
+      <Origin X="0.5" Y ="0.5"/>
+    </Transform>
+    
+    <ScalerBehaviour>
+      <Amplitude Amplitude="2"/>
+      <Frequency Frequency="2"/>
+    </ScalerBehaviour>
+  </Maxwell3>
 
   <Manager>
     <GameSceneSwitcher/>

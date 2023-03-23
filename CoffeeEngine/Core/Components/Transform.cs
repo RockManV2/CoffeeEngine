@@ -15,10 +15,18 @@ public class Transform : Component
         get => _origin;
         set
         {
-            Texture2D tex = GameObject.GetComponent<SpriteRenderer>().Texture;
+            Vector2 textureSize = new();
+
+            if (GameObject.GetComponent<SpriteRenderer>() != null)
+                textureSize = new Vector2(GameObject.GetComponent<SpriteRenderer>().Texture.Width,
+                    GameObject.GetComponent<SpriteRenderer>().Texture.Height);
+            
+            if(GameObject.GetComponent<AnimatedSpriteRenderer>() != null)
+                textureSize = GameObject.GetComponent<AnimatedSpriteRenderer>().TextureSize;
+            
             _origin = new Vector2(
-                x: tex.Width * value.X,
-                y: tex.Height * value.Y
+                x: textureSize.X * value.X,
+                y: textureSize.Y * value.Y
             );
         }
     }

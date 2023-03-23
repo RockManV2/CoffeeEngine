@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GameObjects>
-  
   <NextButton>
     <SpriteRenderer>
       <FilePath FilePath= "UI/Arrow"/>
@@ -30,11 +29,10 @@
       <Scale X="0.7" Y ="0.7"/>
       <Origin X="0.5" Y ="0.5"/>
     </Transform>
-    
-    <BouncerBehaviour>
-      <Amplitude Amplitude="1"/>
-      <Frequency Frequency="1"/>
-    </BouncerBehaviour>
+
+    <ColorShifter>
+      <Speed Speed="1"/>
+    </ColorShifter>
   </Maxwell1>
 
   <Maxwell2>
@@ -46,11 +44,10 @@
       <Scale X="0.7" Y ="0.7"/>
       <Origin X="0.5" Y ="0.5"/>
     </Transform>
-    
-    <BouncerBehaviour>
-      <Amplitude Amplitude="2"/>
-      <Frequency Frequency="2"/>
-    </BouncerBehaviour>
+
+    <ColorShifter>
+      <Speed Speed="2"/>
+    </ColorShifter>
   </Maxwell2>
 
   <Maxwell3>
@@ -62,13 +59,12 @@
       <Scale X="0.7" Y ="0.7"/>
       <Origin X="0.5" Y ="0.5"/>
     </Transform>
-    
-    <BouncerBehaviour>
-      <Amplitude Amplitude="3"/>
-      <Frequency Frequency="3"/>
-    </BouncerBehaviour>
+
+    <ColorShifter>
+      <Speed Speed="3"/>
+    </ColorShifter>
   </Maxwell3>
-  
+
   <Manager>
     <GameSceneSwitcher/>
   </Manager>

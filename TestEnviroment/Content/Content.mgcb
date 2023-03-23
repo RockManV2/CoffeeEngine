@@ -22,6 +22,15 @@
 #begin Scenes/Scene3.xml
 /copy:Scenes/Scene3.xml
 
+#begin Scenes/Scene4.xml
+/copy:Scenes/Scene4.xml
+
+#begin Scenes/Scene5.xml
+/copy:Scenes/Scene5.xml
+
+#begin Scenes/Scene6.xml
+/copy:Scenes/Scene6.xml
+
 #begin Sprites/Maxwell.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -34,6 +43,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Maxwell.png
 
+#begin Sprites/Megaman2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Megaman2.png
+
 #begin UI/Arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -45,4 +66,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:UI/Arrow.png
+
+#begin UI/ArrowR.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:UI/ArrowR.png
 

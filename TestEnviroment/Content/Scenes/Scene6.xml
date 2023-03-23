@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObjects>
+    <MegaChap>
+        <AnimatedSpriteRenderer>
+            <FilePath2 FilePath2="Sprites/Megaman2"/>
+        </AnimatedSpriteRenderer>
+        <Transform>
+            <Position X="400" Y="740"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+        <RotatorBehaviour>
+            <Speed Speed= "0.03"/>
+        </RotatorBehaviour>  
+    </MegaChap>
+    
+    <MegaDude>
+        <AnimatedSpriteRenderer>
+            <FilePath2 FilePath2="Sprites/Megaman2"/>
+        </AnimatedSpriteRenderer>
+        <Transform>
+            <Position X="1300" Y="740"/>
+        </Transform>
+    </MegaDude>
+    
+    
+</GameObjects>

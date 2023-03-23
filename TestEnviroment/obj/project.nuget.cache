@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5nOVvyxD+05pYI9wqc7qQbZ0FhVruxL9dX0kiuAi1b55ykdGrBFPw2JkdUDXyYXr0D2M/uZMl3jLYeJAN44TYg==",
+  "dgSpecHash": "8+ztvg/nhj27BzfxufXRfz6R8F+5j5VmzklzGHfgk7MR/+nogKM/6z235Qy4aHYy9XdJS6FI0HZZr8E4CTFjjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sjoos\\Documents\\Git_Repositories\\CoffeeEngine\\TestEnviroment\\TestEnviroment.csproj",
+  "projectFilePath": "D:\\Git Repos\\CoffeeEngine\\TestEnviroment\\TestEnviroment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sjoos\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
@@ -125,7 +125,11 @@
     "C:\\Users\\sjoos\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\sjoos\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\sjoos\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\sjoos\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.12\\microsoft.netcore.app.ref.6.0.12.nupkg.sha512",
+    "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.12\\microsoft.windowsdesktop.app.ref.6.0.12.nupkg.sha512",
+    "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.12\\microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512",
+    "C:\\Users\\sjoos\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.12\\microsoft.netcore.app.host.win-x64.6.0.12.nupkg.sha512"
   ],
   "logs": []
 }

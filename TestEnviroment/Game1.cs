@@ -21,8 +21,6 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        Time.Start();
-        
         base.Initialize();
     }
 
@@ -46,7 +44,7 @@ public class Game1 : Game
         SceneManager.ActiveScene.UpdateScene();
         SceneManager.ActiveScene.CheckCollisions();
 
-        Time.UpdateTime();
+        Time.UpdateTime(gameTime);
 
         base.Update(gameTime);
     }

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameObjects>
+    <NextButton>
+        <SpriteRenderer>
+            <FilePath FilePath="UI/Arrow"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="1700" Y="480"/>
+        </Transform>
+        <Button/>
+    </NextButton>
+
+    <PreviousButton>
+        <SpriteRenderer>
+            <FilePath FilePath="UI/ArrowR"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="0" Y="480"/>
+        </Transform>
+        <Button/>
+    </PreviousButton>
+
+    <Maxwell1>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="500" Y="240"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <ColorShifter/>
+        <RotatorBehaviour/>
+    </Maxwell1>
+
+    <Maxwell2>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="900" Y="240"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <ColorShifter/>
+        <BouncerBehaviour/>
+    </Maxwell2>
+
+    <Maxwell3>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="1300" Y="240"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <BouncerBehaviour/>
+        <RotatorBehaviour/>
+    </Maxwell3>
+
+    <Maxwell4>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="500" Y="740"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+        
+        <RotatorBehaviour/>
+    </Maxwell4>
+
+    <Maxwell5>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="900" Y="740"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <BouncerBehaviour/>
+    </Maxwell5>
+
+    <Maxwell6>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="1300" Y="740"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <ColorShifter/>
+    </Maxwell6>
+
+    <Maxwell7>
+        <SpriteRenderer>
+            <FilePath FilePath="Sprites/Maxwell"/>
+        </SpriteRenderer>
+        <Transform>
+            <Position X="1700" Y="240"/>
+            <Scale X="0.7" Y="0.7"/>
+            <Origin X="0.5" Y="0.5"/>
+        </Transform>
+
+        <ColorShifter/>
+        <ScalerBehaviour/>
+        <RotatorBehaviour/>
+        <BouncerBehaviour/>
+    </Maxwell7>
+
+    <Manager>
+        <GameSceneSwitcher/>
+    </Manager>
+</GameObjects>

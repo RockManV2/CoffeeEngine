@@ -110,6 +110,16 @@ public class GameObject
 
         return null;
     }
+    
+    public List<T> GetComponents<T>() where T : Component
+    {
+        List<T> result = new();
+        foreach (var component in _components)
+            if (component is T typedComponent)
+                result.Add(typedComponent);
+
+        return result.Count > 0 ? result : null;
+    }
 
 
     public void Destroy() => SceneManager.ActiveScene.Destroy(this);
